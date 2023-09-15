@@ -4,7 +4,7 @@ ClapTrap::ClapTrap( void ) {
 	std::cout << "ClapTrap Default Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name( name ) {
+ClapTrap::ClapTrap( const std::string& name ) : _name( name ) {
 	std::cout << "ClapTrap Parameter Constructor called" << std::endl;
 
 	setHitPoints( 10 );
@@ -44,33 +44,33 @@ std::string	ClapTrap::getName( void ) const {
 	return ( _name );
 }
 
-unsigned int	ClapTrap::getHitPoints( void ) const {
+uint	ClapTrap::getHitPoints( void ) const {
 	return ( _hitPoints );
 }
 
-unsigned int	ClapTrap::getEnergyPoints( void ) const {
+uint	ClapTrap::getEnergyPoints( void ) const {
 	return ( _energyPoints );
 }
 
-unsigned int	ClapTrap::getAttackDamage( void ) const {
+uint	ClapTrap::getAttackDamage( void ) const {
 	return ( _attackDamage );
 }
 
 // Setters
 
-void	ClapTrap::setName( std::string newName ) {
+void	ClapTrap::setName( const std::string& newName ) {
 	_name = newName;
 }
 
-void	ClapTrap::setHitPoints( unsigned int newHitPoints ) {
+void	ClapTrap::setHitPoints( const uint newHitPoints ) {
 	_hitPoints = newHitPoints;
 }
 
-void	ClapTrap::setEnergyPoints( unsigned int newEnergyPoints ) {
+void	ClapTrap::setEnergyPoints( const uint newEnergyPoints ) {
 	_energyPoints = newEnergyPoints;
 }
 
-void	ClapTrap::setAttackDamage( unsigned int newAttackDamage ) {
+void	ClapTrap::setAttackDamage( const uint newAttackDamage ) {
 	_attackDamage = newAttackDamage;
 }
 
@@ -82,7 +82,6 @@ void	ClapTrap::attack( const std::string& target ) {
 		std::cout << target << "!" << std::endl;
 		return ;
 	}
-	
 
 	_energyPoints -= _attackDamage;
 
@@ -90,7 +89,7 @@ void	ClapTrap::attack( const std::string& target ) {
 	std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
-void	ClapTrap::takeDamage( unsigned int amount ) {
+void	ClapTrap::takeDamage( uint amount ) {
 	if ( _hitPoints < amount) {
 		_hitPoints = 0;
 	}
@@ -102,7 +101,7 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 	std::cout << amount << " points of damage!" << std::endl;
 }
 
-void	ClapTrap::beRepaired( unsigned int amount ) {
+void	ClapTrap::beRepaired( uint amount ) {
 	if ( _energyPoints < amount ) {
 		std::cout << "ClapTrap " << _name << " has not enough energy points to be repaired by ";
 		std::cout << amount << " number of hit points" << std::endl;

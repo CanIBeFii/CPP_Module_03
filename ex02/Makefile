@@ -1,10 +1,10 @@
-NAME = ex01
+NAME = ex02
 
-HEADERS_LIST = ClapTrap.hpp ScavTrap.hpp
+HEADERS_LIST = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
-SOURCES_LIST = ClapTrap.cpp ScavTrap.cpp main.cpp
+SOURCES_LIST = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 SOURCES_DIRECTORY = ./sources/
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
