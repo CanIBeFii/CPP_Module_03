@@ -30,6 +30,11 @@ int	main( void ) {
 		bob.attack( "target" );
 		bob.takeDamage( 100 );
 		bob.beRepaired( 100 );
+
+		std::cout << std::endl;
+		bob.guardGate();
+		std::cout << std::endl;
+
 		std::cout << bob.getName() << " has " << bob.getHitPoints() << " hit points ";
 		std::cout << bob.getEnergyPoints() << " energy points" << std::endl;
 	}

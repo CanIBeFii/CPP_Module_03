@@ -4,7 +4,7 @@ ScavTrap::ScavTrap( void ) {
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap( name ) {
+ScavTrap::ScavTrap( const std::string& name ) : ClapTrap( name ) {
 	std::cout << "ScavTrap Parameter Constructor called" << std::endl;
 
 	setHitPoints( 100 );
