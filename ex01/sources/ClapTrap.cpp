@@ -1,11 +1,13 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) {
-	std::cout << "ClapTrap Default Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const std::string& name ) : _name( name ) {
-	std::cout << "ClapTrap Parameter Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
+	std::cout << "Parameter Constructor called" << std::endl;
 
 	setHitPoints( 10 );
 	setEnergyPoints( 10 );
@@ -13,7 +15,9 @@ ClapTrap::ClapTrap( const std::string& name ) : _name( name ) {
 }
 
 ClapTrap::ClapTrap( const ClapTrap& copy ) {
-	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
+	std::cout << "Copy Constructor called" << std::endl;
+	
 	//*this = copy;
 	setName( copy.getName() );
 	setHitPoints( copy.getHitPoints() );
@@ -22,7 +26,8 @@ ClapTrap::ClapTrap( const ClapTrap& copy ) {
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& copy ) {
-	std::cout << "ClapTrap Assignation Operator called" << std::endl;
+	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
+	std::cout << "Assignation Operator called" << std::endl;
 	
 	if ( this != &copy ) {
 		setName( copy.getName() );
@@ -35,7 +40,8 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap& copy ) {
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "ClapTrap Destructor called" << std::endl;
+	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
+	std::cout << "Destructor called" << std::endl;
 }
 
 // Getters
