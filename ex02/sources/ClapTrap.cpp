@@ -27,7 +27,7 @@ ClapTrap::ClapTrap( const ClapTrap& copy ) {
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& copy ) {
 	std::cout << BOLDGREEN << "ClapTrap: " << RESET;
-	std::cout << "Assignation Operator called" << std::endl
+	std::cout << "Assignation Operator called" << std::endl;
 	
 	if ( this != &copy ) {
 		setName( copy.getName() );
@@ -83,13 +83,13 @@ void	ClapTrap::setAttackDamage( const uint newAttackDamage ) {
 // Member functions
 
 void	ClapTrap::attack( const std::string& target ) {
-	if ( _energyPoints < _attackDamage ) {
+	if ( _energyPoints == 0 ) {
 		std::cout << "ClapTrap " << _name << " has not enough energy points to attack ";
 		std::cout << target << "!" << std::endl;
 		return ;
 	}
 
-	_energyPoints -= _attackDamage;
+	_energyPoints -= 1;
 
 	std::cout << "ClapTrap " << _name << " attacks " << target;
 	std::cout << ", causing " << _attackDamage << " points of damage!" << std::endl;
@@ -108,14 +108,14 @@ void	ClapTrap::takeDamage( uint amount ) {
 }
 
 void	ClapTrap::beRepaired( uint amount ) {
-	if ( _energyPoints < amount ) {
+	if ( _energyPoints == 0 ) {
 		std::cout << "ClapTrap " << _name << " has not enough energy points to be repaired by ";
 		std::cout << amount << " number of hit points" << std::endl;
 		return ;
 	}
 
 	_hitPoints += amount;
-	_energyPoints -= amount;
+	_energyPoints -= 1;
 
 	std::cout << "ClapTrap " << _name << " is repaired by ";
 	std::cout << amount << " points!" << std::endl;

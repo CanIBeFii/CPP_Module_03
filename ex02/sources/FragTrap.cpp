@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap( void ) : ClapTrap() {
 	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
-	std::cout << "Default Constructor called" << std::endl
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 FragTrap::FragTrap( const std::string& name ) : ClapTrap(name) {
