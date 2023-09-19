@@ -1,11 +1,13 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap( void ) : ClapTrap() {
-	std::cout << "FragTrap Default constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Default Constructor called" << std::endl
 }
 
 FragTrap::FragTrap( const std::string& name ) : ClapTrap(name) {
-	std::cout << "FragTrap Name constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Parameter Constructor called" << std::endl;
 
 	setHitPoints( 100 );
 	setEnergyPoints( 100 );
@@ -13,11 +15,13 @@ FragTrap::FragTrap( const std::string& name ) : ClapTrap(name) {
 }
 
 FragTrap::FragTrap( const FragTrap& copy ) : ClapTrap( copy ) {
-	std::cout << "FragTrap Copy constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Copy Constructor called" << std::endl;
 }
 
 FragTrap&	FragTrap::operator=( const FragTrap& copy ) {
-	std::cout << "FragTrap Assignation operator called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Assignation Operator called" << std::endl;
 
 	if ( this != &copy ) {
 		this->ClapTrap::operator=( copy );
@@ -26,7 +30,8 @@ FragTrap&	FragTrap::operator=( const FragTrap& copy ) {
 }
 
 FragTrap::~FragTrap( void ) {
-	std::cout << "FragTrap Deconstructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys( void ) {

@@ -1,11 +1,13 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) {
-	std::cout << "ScavTrap Default Constructor called" << std::endl;
+ScavTrap::ScavTrap( void ) : ClapTrap() {
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap( const std::string& name ) : ClapTrap( name ) {
-	std::cout << "ScavTrap Parameter Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Parameter Constructor called" << std::endl;
 
 	setHitPoints( 100 );
 	setEnergyPoints( 50 );
@@ -13,12 +15,14 @@ ScavTrap::ScavTrap( const std::string& name ) : ClapTrap( name ) {
 }
 
 ScavTrap::ScavTrap( const ScavTrap& copy ) : ClapTrap( copy ) {
-	std::cout << "ScavTrap Copy Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Copy Constructor called" << std::endl;
 	//*this = copy;
 }
 
 ScavTrap&	ScavTrap::operator=( const ScavTrap& copy ) {
-	std::cout << "ScavTrap Assignation Operator called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Assignation Operator called" << std::endl;
 	
 	if ( this != &copy ) {
 		this->ClapTrap::operator=( copy );
@@ -27,7 +31,8 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& copy ) {
 }
 
 ScavTrap::~ScavTrap( void ) {
-	std::cout << "ScavTrap Deconstructor called" << std::endl;
+	std::cout << BOLDGREEN << "ScavTrap: " << RESET;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void	ScavTrap::attack( const std::string& target ) {
