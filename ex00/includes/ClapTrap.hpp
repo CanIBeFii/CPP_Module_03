@@ -16,20 +16,20 @@ class ClapTrap {
 
 		// Getters
 		std::string		getName( void ) const;
-		uint	getHitPoints( void ) const;
-		uint	getEnergyPoints( void ) const;
-		uint	getAttackDamage( void ) const;
+		uint			getHitPoints( void ) const;
+		uint			getEnergyPoints( void ) const;
+		uint			getAttackDamage( void ) const;
 
 		// Setters
-		void		setName( const std::string& newName );
-		void		setHitPoints( const uint newHitPoints );
-		void		setEnergyPoints( const uint newEnergyPoints );
-		void		setAttackDamage( const uint newAttackDamage );
+		void			setName( const std::string& newName );
+		void			setHitPoints( const uint newHitPoints );
+		void			setEnergyPoints( const uint newEnergyPoints );
+		void			setAttackDamage( const uint newAttackDamage );
 		
 		// Functions
-		void		attack( const std::string& target );
-		void		takeDamage( uint amount );
-		void		beRepaired( uint amount );
+		void			attack( const std::string& target );
+		void			takeDamage( uint amount );
+		void			beRepaired( uint amount );
 
 	private:
 		std::string		_name;
