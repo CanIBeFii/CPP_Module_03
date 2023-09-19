@@ -2,6 +2,9 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+
+typedef unsigned int	uint;
+
 class ClapTrap {
 	public:
 		// Othodox Canonical Form
@@ -23,16 +26,20 @@ class ClapTrap {
 		void		setEnergyPoints( const uint newEnergyPoints );
 		void		setAttackDamage( const uint newAttackDamage );
 		
-		// Member functions
+		// Functions
 		void		attack( const std::string& target );
 		void		takeDamage( uint amount );
 		void		beRepaired( uint amount );
 
 	private:
 		std::string		_name;
-		uint	_hitPoints;
-		uint	_energyPoints;
-		uint	_attackDamage;
+		uint			_hitPoints;
+		uint			_energyPoints;
+		uint			_attackDamage;
 };
+
+// Colors
+#define RESET   "\033[0m"
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
 
 #endif
