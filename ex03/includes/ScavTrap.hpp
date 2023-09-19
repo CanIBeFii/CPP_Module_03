@@ -8,10 +8,10 @@ class ScavTrap : virtual public ClapTrap
 	public:
 		// Othodox Canonical Form
 		ScavTrap( void );
-		ScavTrap( std::string name );
+		ScavTrap( const std::string& name );
 		ScavTrap( const ScavTrap& copy );
 		ScavTrap&	operator=( const ScavTrap& copy );
-		~ScavTrap( void );
+		virtual ~ScavTrap( void );
 
 		// Functions
 		void		attack( const std::string& target );

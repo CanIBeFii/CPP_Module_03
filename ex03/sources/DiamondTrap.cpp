@@ -1,22 +1,30 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ) {
-	std::cout << "DiamondTrap Default Constructor called" << std::endl;
+DiamondTrap::DiamondTrap( void ) : ClapTrap(), ScavTrap(), FragTrap() {
+	std::cout << BOLDGREEN << "DiamondTrap: " << RESET;
+	std::cout << "Default Constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const std::string& name ) :
-		ClapTrap( name + "_clap_name", 100, 50, 30 ), ScavTrap(), FragTrap(), _name( name ) {
-	std::cout << "DiamondTrap Parameter Constructor called" << std::endl;
+DiamondTrap::DiamondTrap( const std::string& name ) : ClapTrap( name + "_clap_name" ),
+		ScavTrap(), FragTrap(), _name( name ) {
+	std::cout << BOLDGREEN << "DiamondTrap: " << RESET;
+	std::cout << "Parameter Constructor called" << std::endl;
+	
+	setHitPoints( 100 );
+	setEnergyPoints( 50 );
+	setAttackDamage( 30 );
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap& copy ) : ClapTrap( copy ),
 		ScavTrap(), FragTrap() {
-	std::cout << "DiamondTrap Copy Constructor called" << std::endl;
+	std::cout << BOLDGREEN << "DiamondTrap: " << RESET;
+	std::cout << "Copy Constructor called" << std::endl;
 	//*this = copy;
 }
 
 DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& copy ) {
-	std::cout << "DiamondTrap Assignation Operator called" << std::endl;
+	std::cout << BOLDGREEN << "DiamondTrap: " << RESET;
+	std::cout << "Assignation Operator called" << std::endl;
 	
 	if ( this != &copy ) {
 		this->ClapTrap::operator=( copy );
@@ -25,7 +33,8 @@ DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& copy ) {
 }
 
 DiamondTrap::~DiamondTrap( void ) {
-	std::cout << "DiamondTrap Deconstructor called" << std::endl;
+	std::cout << BOLDGREEN << "DiamondTrap: " << RESET;
+	std::cout << "Destructor called" << std::endl;
 }
 
 // Getters
